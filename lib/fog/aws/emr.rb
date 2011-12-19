@@ -26,10 +26,10 @@ module Fog
       # collection  :snapshots
       # model       :parameter_group
       # collection  :parameter_groups
-      # 
+      #
       # model       :parameter
       # collection  :parameters
-      # 
+      #
       # model       :security_group
       # collection  :security_groups
 
@@ -67,7 +67,7 @@ module Fog
           @connection_options     = options[:connection_options] || {}
           @hmac = Fog::HMAC.new('sha256', @aws_secret_access_key)
 
-          options[:region] ||= 'us-east-1'
+          @region = options[:region] ||= 'us-east-1'
           @host = options[:host] || 'elasticmapreduce.amazonaws.com'
           @path       = options[:path]        || '/'
           @persistent = options[:persistent]  || false
